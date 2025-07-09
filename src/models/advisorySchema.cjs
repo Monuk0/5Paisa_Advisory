@@ -1,9 +1,10 @@
 const { Schema } = require('mongoose');
 const mongoose = require('mongoose');
 
-const advisorySchema = new mongoose.Schema({
+const advisorySchema = new mongoose.Schema(
+  {
     advisorNameId: String,
-    advisoryType:String,
+    advisoryType: String,
     buySell: String,
     scripName: String,
     scripCode: Number,
@@ -16,9 +17,10 @@ const advisorySchema = new mongoose.Schema({
     exitPriceModified: Boolean,
     entryPriceModified: Boolean,
     delIntraday: String,
-    stopLossPriceModified:Boolean,
+    stopLossPriceModified: Boolean,
     telegramGroups: [Schema.Types.Mixed],
-},
-{ timestamps: true });
+  },
+  { timestamps: true }
+);
 
 module.exports = mongoose.model('Advisory', advisorySchema);

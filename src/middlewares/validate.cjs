@@ -10,7 +10,7 @@ const { STATUS } = require('../services/constant.service.cjs');
 //   };
 // };
 
-module.exports = (schema, property = "body") => {
+module.exports = (schema, property = 'body') => {
   return (req, res, next) => {
     const { error, value } = schema.validate(req[property], {
       abortEarly: false,
@@ -18,13 +18,15 @@ module.exports = (schema, property = "body") => {
     });
 
     if (!req.body || Object.keys(req.body).length === 0) {
-    return res.status(STATUS.BAD_REQUEST).json({ message: 'Request body cannot be empty' });
+      return res
+        .status(STATUS.BAD_REQUEST)
+        .json({ message: 'Request body cannot be empty' });
     }
 
     if (error) {
       return res.status(STATUS.BAD_REQUEST).json({
         success: false,
-        message: "Validation failed",
+        message: 'Validation failed',
         errors: error.details.map((d) => d.message),
       });
     }

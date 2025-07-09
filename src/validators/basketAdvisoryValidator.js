@@ -1,4 +1,4 @@
-const Joi = require("joi");
+const Joi = require('joi');
 
 const basketDetailSchema = Joi.object({
   cmp: Joi.number().strict().required(),
@@ -12,15 +12,15 @@ const basketDetailSchema = Joi.object({
   advisoryCreatedOn: Joi.string().required(),
   typeOfTrade: Joi.string().required(),
   callType: Joi.string().required(),
-  callCloseDateTime: Joi.string().allow("").required(),
+  callCloseDateTime: Joi.string().allow('').required(),
   lotSize: Joi.number().strict().required(),
   cpType: Joi.string().required(),
-  callType:Joi.string().required()
+  callType: Joi.string().required(),
 });
 
 const addBasketAdvisorySchema = Joi.object({
   advisorNameId: Joi.string().required(),
-  advisoryType:Joi.string().required(),
+  advisoryType: Joi.string().required(),
   ltpPrice: Joi.number().strict().required(),
   targetPrice: Joi.number().strict().required(),
   stopLossPrice: Joi.number().strict().required(),
@@ -30,9 +30,9 @@ const addBasketAdvisorySchema = Joi.object({
   targetPriceModified: Joi.boolean().required(),
   stopLossPriceModified: Joi.boolean().required(),
   maxProfit: Joi.number().allow(null).strict().required(),
-  maxLoss: Joi.number().allow(null).strict().required(),    // optional; will be calculated
+  maxLoss: Joi.number().allow(null).strict().required(), // optional; will be calculated
   telegramGroups: Joi.array().items(Joi.number().strict()).required(),
-  view : Joi.string().required(),
+  view: Joi.string().required(),
 });
 
 module.exports = {

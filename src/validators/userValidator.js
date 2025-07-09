@@ -5,12 +5,12 @@ const registerSchema = Joi.object({
   email: Joi.string().email().required(),
   password: Joi.string().min(6).required(),
   role: Joi.string().valid('user', 'admin'),
-  currentToken: Joi.string().allow(null).optional()
+  currentToken: Joi.string().allow(null).optional(),
 });
 
 const loginSchema = Joi.object({
   email: Joi.string().email().required(),
-  password: Joi.string().required()
+  password: Joi.string().required(),
 });
 
 module.exports = {

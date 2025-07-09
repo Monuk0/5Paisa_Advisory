@@ -7,8 +7,9 @@ const authLimiter = rateLimit({
   max: 5, // limit each IP to 5 requests per windowMs
   message: {
     status: STATUS.TOO_MANY_REQUESTS,
-    message: "Too many login attempts from this IP, please try again after 15 minutes"
-  }
+    message:
+      'Too many login attempts from this IP, please try again after 15 minutes',
+  },
 });
 
 const generalLimiter = rateLimit({
@@ -16,8 +17,8 @@ const generalLimiter = rateLimit({
   max: 100, // limit each IP to 100 requests per minute
   message: {
     status: STATUS.TOO_MANY_REQUESTS,
-    message: "Too many requests, please try again later"
-  }
+    message: 'Too many requests, please try again later',
+  },
 });
 
 module.exports = { authLimiter, generalLimiter };
