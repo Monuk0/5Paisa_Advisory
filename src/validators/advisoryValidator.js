@@ -1,8 +1,8 @@
-const Joi = require("joi");
+const Joi = require('joi');
 
 const addAdvisorySchema = Joi.object({
   advisorNameId: Joi.string().required(),
-  advisoryType:Joi.string().required(),
+  advisoryType: Joi.string().required(),
   buySell: Joi.string().required(),
   scripName: Joi.string().required(),
   scripCode: Joi.number().strict().required(),
@@ -20,5 +20,5 @@ const addAdvisorySchema = Joi.object({
 });
 
 module.exports = {
-  addAdvisorySchema
+  addAdvisorySchema,
 };

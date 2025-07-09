@@ -13,12 +13,19 @@ const logger = winston.createLogger({
   format: logFormat,
   transports: [
     new winston.transports.Console(),
-    new winston.transports.File({ filename: path.join(__dirname, '../../logs/error.log'), level: 'error' }),
-    new winston.transports.File({ filename: path.join(__dirname, '../../logs/combined.log') })
+    new winston.transports.File({
+      filename: path.join(__dirname, '../../logs/error.log'),
+      level: 'error',
+    }),
+    new winston.transports.File({
+      filename: path.join(__dirname, '../../logs/combined.log'),
+    }),
   ],
   exceptionHandlers: [
-    new winston.transports.File({ filename: path.join(__dirname, '../../logs/exceptions.log') })
-  ]
+    new winston.transports.File({
+      filename: path.join(__dirname, '../../logs/exceptions.log'),
+    }),
+  ],
 });
 
 module.exports = logger;
