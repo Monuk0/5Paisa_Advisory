@@ -5,6 +5,7 @@ const basketAdvisoryRoutes = require('./routes/basketAdvisoryRoutes.cjs');
 const { authLimiter, generalLimiter } = require('./middlewares/rateLimiterMiddleware.cjs');
 const authRoutes = require('./routes/authRoutes.cjs');
 
+
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
